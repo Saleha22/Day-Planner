@@ -1,17 +1,16 @@
-$(document).ready(function () {
-  // on page load
+const onReady = () => {
+  // render time
   $("#currentDay").html(moment().format("dddd, MMMM Do YYYY, h:mm:ss a"));
-  hourlyBlock();
-});
 
-const hourlyBlock = () => {
-  alert("loadHourlyblock");
+  // render timeblocks
 };
 
-const renderTimeBlock = (workingHour) => {
-  console.log(workingHour);
+const renderTimeBlocks = () => {
+  const renderTimeBlock = (workingHour) => {
+    console.log(workingHour);
+  };
+  workingHours.forEach(renderTimeBlock);
 };
-workingHours.forEach(renderTimeBlock);
 
 const getClassName = (workingHour) => {
   const currentHour = moment().hour();
@@ -48,3 +47,5 @@ const writeToLocalStorage = (key, value) => {
   // set stringified value to LS for key name
   localStorage.setItem(key, stringifiedValue);
 };
+
+$(document).ready(onReady);
