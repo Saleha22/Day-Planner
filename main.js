@@ -49,7 +49,7 @@ const writeToLocalStorage = (key) => {
 
   console.log(`#${id}Textarea`);
   console.log(value);
-  // set stringified value to LS for key name
+  // set value to LocalStorage for key name
   localStorage.setItem(id, value);
 };
 
@@ -57,4 +57,40 @@ $(document).ready(onReady);
 
 document
   .getElementById("Save9am")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save10am")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save11am")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save12pm")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save13pm")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save14pm")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save15pm")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save16pm")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save17pm")
+  .addEventListener("click", writeToLocalStorage);
+
+document
+  .getElementById("Save18pm")
   .addEventListener("click", writeToLocalStorage);
