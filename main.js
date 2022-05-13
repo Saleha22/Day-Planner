@@ -5,12 +5,12 @@ const onReady = () => {
   // render timeblocks
 };
 
-const renderTimeBlocks = () => {
-  const renderTimeBlock = (workingHour) => {
-    console.log(workingHour);
-  };
-  workingHours.forEach(renderTimeBlock);
-};
+//const renderTimeBlocks = () => {
+//const renderTimeBlock = (workingHour) => {
+//console.log(workingHour);
+//};
+// workingHours.forEach(renderTimeBlock);
+//};
 
 const getClassName = (workingHour) => {
   const currentHour = moment().hour();
@@ -40,12 +40,21 @@ const readFromLocalStorage = (key, defaultValue) => {
   }
 };
 
-const writeToLocalStorage = (key, value) => {
+const writeToLocalStorage = (key) => {
   // convert value to string
-  const stringifiedValue = JSON.stringify(value);
+  console.log(key["target"]["id"]);
+  let id = key["target"]["id"];
+  console.log(`#${id}Textarea`);
+  let value = jQuery(`#${id}Textarea`).val();
 
+  console.log(`#${id}Textarea`);
+  console.log(value);
   // set stringified value to LS for key name
-  localStorage.setItem(key, stringifiedValue);
+  localStorage.setItem(id, value);
 };
 
 $(document).ready(onReady);
+
+document
+  .getElementById("Save9am")
+  .addEventListener("click", writeToLocalStorage);
