@@ -73,5 +73,12 @@ table {
   width: 100%;
   border: 1px solid black;
 }
-<table border="1" width="200" height="200"cellspacing="20">
-
+.present {
+  color: #ff6961;
+}
+.past {
+  color: dimgray;
+}
+.future {
+  color: greenyellow;
+}

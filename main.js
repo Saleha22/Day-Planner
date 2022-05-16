@@ -12,18 +12,18 @@ const onReady = () => {
 // workingHours.forEach(renderTimeBlock);
 //};
 
-const getClassName = (workingHour) => {
+const getClassName = (workingHour, time) => {
   const currentHour = moment().hour();
-  //if workingHour is present
+  let status = "";
+
   if (workingHour === currentHour) {
-    return "present";
+    status = "present";
+  } else if (workingHour > currentHour) {
+    status = "future";
+  } else {
+    status = "past";
   }
-  //if workingHour is future
-  if (workingHour > currentHour) {
-    return "future";
-  }
-  return "past";
-  //else past
+  jQuery(`#Save${workingHour}${time}Textarea`).addClass(status);
 };
 
 const readFromLocalStorage = (key, defaultValue) => {
@@ -100,3 +100,14 @@ readFromLocalStorage("Save15pm", "");
 readFromLocalStorage("Save16pm", "");
 readFromLocalStorage("Save17pm", "");
 readFromLocalStorage("Save18pm", "");
+
+getClassName(9, "am");
+getClassName(10, "am");
+getClassName(11, "am");
+getClassName(12, "pm");
+getClassName(13, "pm");
+getClassName(14, "pm");
+getClassName(15, "pm");
+getClassName(16, "pm");
+getClassName(17, "pm");
+getClassName(18, "pm");
