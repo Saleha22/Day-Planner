@@ -28,15 +28,10 @@ const getClassName = (workingHour) => {
 
 const readFromLocalStorage = (key, defaultValue) => {
   // get from LS using key name
-  const dataFromLS = localStorage.getItem(key);
+  const output = localStorage.getItem(key);
 
-  // parse data from LS
-  const parsedData = JSON.parse(dataFromLS);
-
-  if (parsedData) {
-    return parsedData;
-  } else {
-    return defaultValue;
+  if (output) {
+    jQuery(`#${key}Textarea`).val(output);
   }
 };
 
@@ -94,3 +89,14 @@ document
 document
   .getElementById("Save18pm")
   .addEventListener("click", writeToLocalStorage);
+
+readFromLocalStorage("Save9am", "");
+readFromLocalStorage("Save10am", "");
+readFromLocalStorage("Save11am", "");
+readFromLocalStorage("Save12pm", "");
+readFromLocalStorage("Save13pm", "");
+readFromLocalStorage("Save14pm", "");
+readFromLocalStorage("Save15pm", "");
+readFromLocalStorage("Save16pm", "");
+readFromLocalStorage("Save17pm", "");
+readFromLocalStorage("Save18pm", "");
