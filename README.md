@@ -20,4 +20,4 @@ You can find the application link [here](https://saleha22.github.io/Day-Planner/
 
 ## Screenshots
 
-![application screenshot](./image1.png)
+![application screenshot](./assets/images/image1.png)
